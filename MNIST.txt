@@ -1,0 +1,40 @@
+Den här koden är en implementation av en Convolutional Neural Network (CNN)
+för att klassificera handskrivna siffror från MNIST-datasetet.
+MNIST-datasetet är en samling av 28x28 pixlar svartvita bilder av handskrivna siffror från 0 till 9.
+
+MNIST-datasetet är ett klassiskt dataset som ofta används för att utföra grundläggande
+tester och benchmarking av maskininlärningsalgoritmer. 
+Att kunna korrekt klassificera handskrivna siffror är viktigt för många tillämpningar,
+inklusive optisk teckenigenkänning (OCR) och automatiserad postsortering. Därför är utvecklingen av en effektiv klassificeringsmodell för detta problem av stor betydelse.
+
+I koden används en CNN-arkitektur för att träna en modell på MNIST-datasetet.
+En CNN är en typ av neural nätverksarkitektur som är särskilt lämpad för att hantera bilddata. 
+Modellen tränas med hjälp av gradientbaserad optimering och backpropagation för att minska förlusten mellan de förutsägda och verkliga etiketterna.
+
+Redovisning av koden:
+
+Kodinläsning och förberedelse:
+
+MNIST-datasetet laddas ner och förbereds för modellträning och testning.
+Transformationer appliceras på bilderna för att konvertera dem till tensorer och normalisera dem.
+Tensorer är som behållare för data, likt lådor där vi kan förvara olika typer av information. Dessa lådor kan ha olika storlekar och former, och vi kan utföra olika operationer på dem, såsom addition, multiplikation eller jämförelse
+kan ha olika antal dimensioner till exempel 1D, 2D, 3D osv.
+
+Modellträning och evaluering:
+
+-En CNN-modell definieras.
+-En förlustfunktion och en optimerare definieras för att träna modellen.
+-Modellen tränas över ett antal epocher och förlusten för varje epoch utvärderas och skrivs ut.
+-En "epoch" är som en rundtur där vårt maskininlärningsprogram tränar sig själv genom att titta på varje exempel i träningsuppsättningen en gång. Vi använder resultaten från varje runda för att justera hur vårt program fungerar, så det blir bättre på att göra sina uppgifter. Sedan upprepar vi processen flera gånger tills programmet blir tillräckligt bra på sin uppgift.
+-Modellen utvärderas på testuppsättningen genom att beräkna noggrannheten.
+
+-Tolkning av resultaten:
+
+Noggrannheten av den tränade modellen på testuppsättningen indikerar hur väl modellen generaliserar till nya exempel.
+En hög noggrannhet visar att modellen lyckas korrekt klassificera handskrivna siffror, vilket är en viktig prestandamätare för problemet.
+
+
+Källor:
+https://youtu.be/78lhQ5mJMyE
+https://www.tensorflow.org/datasets/catalog/mnist
+https://chat.openai.com/

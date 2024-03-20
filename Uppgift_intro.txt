@@ -1,0 +1,49 @@
+
+Introduktion:
+Problemets bakgrund: Att förutsäga flyktingströmmar är av avgörande betydelse för att internationella organisationer
+regeringar och frivilligorganisationer ska kunna planera och tillhandahålla adekvata resurser och stöd till flyktingbefolkningen. 
+Genom att förstå hur olika förhållanden och händelser runt om i 
+världen påverkar flyktingströmmar kan man bättre möta behoven hos dem som är mest utsatta.
+
+Data och problemformulering:
+Datasetets relevans: jag använder ett dataset som innehåller information om olika variabler som kan påverka flyktingström 
+som politisk instabilitet, ekonomisk situation, konfliktnivå, miljömässiga katastrofer och internationella relationer.
+Detta dataset är av stor relevans för att lösa problemet med att förutsäga flyktingströmmar.
+
+alla variabler som används för att förutsäga antalet flyktingar (Previous Refugees) baserat
+på de olika förhållandena och händelserna i det aktuella området
+Det är också en skala från 1 till 10.
+
+Problemformulering: jag formulerar problemet som en regressionsuppgift där målet är att förutsäga
+antalet flyktingar baserat på de olika förhållandena och händelserna som beskrivs i datasetet.
+
+Metod:
+Metod för lösningsförslag: jag använder en linjär regressionsmodell för att lösa problemet. 
+Linjär regression är en bra metod för  modellera sambandet mellan en eller flera oberoende variabler och en kontinuerlig beroende variabel.
+
+Hantering av kategoriska variabler: För att hantera kategoriska variabler som 'Country' använder jag
+One-Hot Encoding-teknik för att omvandla dem till numeriska värden som modellen kan förstå.(med hjälp av ChatGPT att implementera One_hot)
+
+Databearbetning: jag delar också  datasetet i träning- och testuppsättningar för att kunna utvärdera modellens prestanda på oberoende data.
+_________________________________________________________
+tolka resultaten :
+
+MAE och RMSE: MAE (Mean Absolute Error) och RMSE (Root Mean Squared Error) är mått på modellens fel.
+MAE mäter genomsnittet av absolutvärdet av prediktionsfel, medan RMSE tar roten ur genomsnittet av kvadraten på prediktionsfelet. 
+I mitt fall visar en lägre MAE och RMSE att modellen har mindre avvikelse från de faktiska värdena,
+vilket indikerar en bättre prestanda.
+
+R^2-score: R^2-score, även känd som "Coefficient of Determination", mäter modellens anpassning till data.
+Det är en indikation på hur väl de oberoende variablerna förklarar variationen i den beroende variabeln.
+R^2-scoren varierar mellan 0 och 1, där en högre score indikerar bättre anpassning. En negativ R^2-score, 
+som vi ser här, indikerar att modellen inte passar bra till data.
+
+Förutsägelser för ny data:
+
+För att göra förutsägelser för ny data används den tränade modellen tillsammans med den nya dataens egenskaper.
+ För varje datapunkt i den nya datan förutsäger modellen antalet flyktingar baserat på dessa egenskaper.
+ För att illustrera detta används den optimerade modellen för att förutsäga antalet flyktingar för en ny datanpunkt med specifika egenskaper för politisk instabilitet, ekonomisk situation, konfliktnivå, miljömässiga katastrofer, demografiska förändringar, humanitärt bistånd och internationella relationer.
+
+Sammanfattning:
+
+Genom att använda en linjär regressionsmodell och One-Hot Encoding för att hantera kategoriska variabler har jag kodat en modell för att förutsäga flyktingströmmar baserat på olika förhållanden och händelser runt om i världen. Modellen utvärderades med hjälp av olika prestandamått, och den optimerades med hjälp av GridSearchCV för att hitta de bästa hyperparametrarna. Resultaten visar modellens förmåga att göra förutsägelser för antalet flyktingar baserat på givna förhållanden och händelser.
