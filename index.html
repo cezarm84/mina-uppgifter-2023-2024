@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+</head>
+
+<body>
+    <h1>House Price Predictor 2024</h1>
+    <form action="/predict" method="post">
+        <label for="distance">Distance (in km):</label><br>
+        <input type="text" id="distance" name="distance"><br>
+        <label for="rooms">Rooms:</label><br>
+        <input type="text" id="rooms" name="rooms"><br>
+        <label for="age">how old the local is?:</label><br>
+        <input type="text" id="age" name="age"><br>
+        <label for="condition">Condition:</label><br>
+        <input type="text" id="condition" name="condition"><br>
+        <label for="interest_rate">Interest Rate (%):</label><br>
+        <input type="text" id="interest_rate" name="interest_rate"><br>
+        <label for="pool">Pool (NO = 0 or YES = 1):</label><br>
+        <input type="text" id="pool" name="pool"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if predicted_price %}
+    <h2>Predicted Price: {{ predicted_price}} SEK</h2>
+    {% endif %}
+</body>
+
+</html>
